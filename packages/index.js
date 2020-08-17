@@ -12,6 +12,9 @@ import Switch from './switch'
 import CheckboxGroup from './checkbox-group'
 import Form from './form'
 import FormItem from './form-item'
+import Tree from './tree/tree.vue'
+import select from './select/select.vue'
+import cascader from './cascader/cascader.vue'
 import './fonts/iconfont.css'
 
 const components = [
@@ -24,7 +27,10 @@ const components = [
   Switch,
   CheckboxGroup,
   Form,
-  FormItem
+  FormItem,
+  Tree,
+  select,
+  cascader
 ]
 const install = function (Vue) {
   // 全局注册所有的组件
