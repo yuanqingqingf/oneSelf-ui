@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
   .one-form-item{
-    margin-bottom: 25px;
+    margin: 5px;
     .one-form-item_label{
       text-align: right;
       vertical-align: middle;

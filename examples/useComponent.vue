@@ -1,7 +1,8 @@
 <template>
-<!-- 该文件中：列出各个组件的使用模板【供参考】 -->
-  <div>
+<!-- 该文件中：列出各个组件的使用模板【供参考】:将该文件内容全部复制到“App.vue”中，yarn serve 即可看到各组件 -->
+  <div id='app'>
     <!-- 按钮 -->
+    <h3>1、按钮</h3>
     <div>type按钮</div>
     <one-button type='primary' @click="confirm">确定</one-button>
     <one-button type='success'>确定</one-button>
@@ -28,35 +29,46 @@
     <one-button type='primary' icon='one-icon-close'>点击</one-button>
     <one-button type='primary' @click="confirm">点击</one-button>
     <!-- dialog提示 -->
+    <h3>2、dialog提示</h3>
+    <one-button type='primary' @click="showDialogMethod">展示dialog</one-button>
     <one-dialog title='温馨提示' :visible.sync='visible' top='50px' width='400px'>
       <template>
          <div>你确定要删除吗？</div>
       </template>
       <template v-slot:footer>
-        <one-button>取消</one-button>
-        <one-button type='primary' @click="confirm">确定</one-button>
+        <one-button @click="showDialogMethod">取消</one-button>
+        <one-button type='primary' @click="showDialogMethod">确定</one-button>
       </template>
     </one-dialog>
     <!--开关  -->
+    <h3>3、开关</h3>
     <one-switch name='tt' active-color='#000' inactive-color='red' v-model='controlSwitch'></one-switch>
     <one-switch name='rr' v-model='controlSwitch'></one-switch>
     <!-- input框 -->
+    <h3>4、input框</h3>
     <one-input type='password' name='yy' v-model="username" placeholder="请输入" :disabled='false' showPassword></one-input>
     <one-input name='yy' type='text' v-model="password" placeholder="请输入" clearIcon></one-input>
     <!-- 单选按钮 -->
+    <h3>5、单选按钮</h3>
+    <p>单独使用</p>
     <one-radio v-model='aihao' label='nan'>男</one-radio>
     <one-radio v-model='aihao' label='nv'>女</one-radio>
+    <p>使用单选框包裹</p>
     <one-radio-group v-model='aihao'>
       <one-radio  label='nan'>男</one-radio>
       <one-radio  label='nv'>nv</one-radio>
     </one-radio-group>
     <!-- 多选按钮 -->
-    <one-Checkedbox label='chang' v-model="single">单唱歌</one-Checkedbox>
-    <one-checkedbox-group v-model="checkList">
-      <one-Checkedbox label='chang'>唱歌</one-Checkedbox>
-      <one-Checkedbox label='tiao'>跳舞</one-Checkedbox>
-    </one-checkedbox-group>
+    <h3>6、多选按钮</h3>
+     <p>单独使用</p>
+    <one-Checkbox label='chang' v-model="single">单唱歌</one-Checkbox>
+    <p>使用多选框包裹</p>
+    <one-Checkbox-group v-model="checkList">
+      <one-Checkbox label='chang'>唱歌</one-Checkbox>
+      <one-Checkbox label='tiao'>跳舞</one-Checkbox>
+    </one-Checkbox-group>
     <!-- form表单  -->
+    <h3>7、form表单</h3>
     <one-form :model='formList'>
       <one-form-item label='用户名'>
         <one-input name='yy' type='text' v-model="formList.username" placeholder="请输入" clearIcon></one-input>
@@ -72,12 +84,15 @@
       </one-form-item>
     </one-form>
     <!-- 树形控件 -->
+    <h3>8、树形控件</h3>
     <one-tree :data='treeList' @checked='getTreeChecked'></one-tree>
     <!-- select 选择器 -->
+    <h3>9、select 选择器</h3>
     <one-select v-model="selectModel" placeholder="请选择">
       <one-option :disabled="item.disabled" v-for='item in selectOptions' :key='item.value' :label='item.label' :value='item.value'></one-option>
     </one-select>
     <!-- 级联选择器 -->
+    <h3>10、cascader 级联选择器</h3>
     <one-cascader
     :options="cascaderOptions"
     v-model="selectedCascader"
@@ -116,7 +131,7 @@ export default {
             label: '顶部导航'
           }]
         }]
-       }, {
+      }, {
         value: 'ziyuan',
         label: '资源',
         children: [{
@@ -130,21 +145,21 @@ export default {
       selectModel: '选项1', // select 选择器 v-model
       // selsect 选择器:option
       selectOptions: [{
-          value: '选项1',
-          label: '黄金糕'
-        }, {
-          value: '选项2',
-          label: '双皮奶'
-        }, {
-          value: '11',
-          label: '双dsf',
-          disabled: true
-        }, {
-          value: '44',
-          label: '双奶'
-        }, {
-          value: '选项3',
-          label: '蚵仔煎'
+        value: '选项1',
+        label: '黄金糕'
+      }, {
+        value: '选项2',
+        label: '双皮奶'
+      }, {
+        value: '11',
+        label: '双dsf',
+        disabled: true
+      }, {
+        value: '44',
+        label: '双奶'
+      }, {
+        value: '选项3',
+        label: '蚵仔煎'
       }],
       visible: false, // dialog-显示与隐藏
       controlSwitch: false, // 开关
@@ -231,11 +246,14 @@ export default {
             }]
           }]
         }]
-      }
+    }
   },
   methods: {
     confirm () {
       console.log('表单', this.selectedCascader)
+    },
+    showDialogMethod () {
+      this.visible = !this.visible
     },
     handleChangeCascader () {
     },
@@ -249,6 +267,9 @@ export default {
 
 <style lang="scss">
 #app {
-
+  padding: 5px 20px;
+  .one-button{
+  margin: 5px
+  }
 }
 </style>

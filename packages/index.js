@@ -5,7 +5,7 @@
 import Button from './button'
 import Dialog from './dialog'
 import Input from './input'
-import Checkbox from './checkbox'
+import Checkbox from './checkbox.vue'
 import Radio from './radio'
 import RadioGroup from './radio-group'
 import Switch from './switch'
@@ -14,8 +14,10 @@ import Form from './form'
 import FormItem from './form-item'
 import Tree from './tree/tree.vue'
 import select from './select/select.vue'
+import selectOption from './select/option.vue'
 import cascader from './cascader/cascader.vue'
-import './fonts/iconfont.css'
+// import './fonts/iconfont.css'
+import './font-self/iconfont.css'
 
 const components = [
   Button,
@@ -30,6 +32,7 @@ const components = [
   FormItem,
   Tree,
   select,
+  selectOption,
   cascader
 ]
 const install = function (Vue) {

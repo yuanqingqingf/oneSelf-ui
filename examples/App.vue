@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id='app'>
     <one-tree :data='treeList' @checked='getTreeChecked'></one-tree>
   </div>
 </template>
@@ -10,7 +10,8 @@ export default {
   name: 'App',
   data () {
     return {
-        treeList: [
+      // 树控件-options 数据模板
+      treeList: [
         {
           id: '1',
           label: '一级 1',
@@ -85,7 +86,16 @@ export default {
     }
   },
   methods: {
-     getTreeChecked (checedId) {
+    confirm () {
+      console.log('表单', this.selectedCascader)
+    },
+    showDialogMethod () {
+      this.visible = !this.visible
+    },
+    handleChangeCascader () {
+    },
+    // 获取“树控件”中，选中项的id
+    getTreeChecked (checedId) {
       console.log('选中node的id', checedId)
     }
   }
@@ -94,5 +104,9 @@ export default {
 
 <style lang="scss">
 #app {
+  padding: 5px 20px;
+  .one-button{
+  margin: 5px
+  }
 }
 </style>

@@ -3,10 +3,10 @@
     <ul class="one-tree">
       <li class="one-tree_li" v-for='(item,i) in list' :key='item.label'>
         <div class="addbackground">
-          <i v-if='item.children' :class="[item.showChildren ? 'one-icon-sami-select' : 'one-icon-add','iconsty']" @click="switchShow(i)"></i>
-          <one-Checkedbox label='chang' :value='item.ischecked' @input="boxInput(i,item.id)" :style="{marginLeft:item.children ? 0 : '20px'}">
+          <i v-if='item.children' :class="[item.showChildren ? 'one-icon-minus' : 'one-icon-add','iconsty']" @click="switchShow(i)"></i>
+          <one-Checkbox label='chang' :value='item.ischecked' @input="boxInput(i,item.id)" :style="{marginLeft:item.children ? 0 : '20px'}">
             <span @click.prevent="switchShow(i)" class="one-tree_label">{{item.label}}</span>
-          </one-Checkedbox>
+          </one-Checkbox>
         </div>
         <one-tree-item v-if='item.showChildren' :data='item.children' style="background: #fff"></one-tree-item>
       </li>
@@ -38,7 +38,6 @@ export default {
     }
   },
   created () {
-    console.log('多斯拉克放假快乐', this.list)
   },
   methods: {
     switchShow (i) {
@@ -114,7 +113,7 @@ export default {
  .iconsty{
   color:#9c9393;
   cursor: pointer;
-  // margin-right: 5px;
+  margin-right: 5px;
   }
   .one-tree_label{
     font-size: 14px;

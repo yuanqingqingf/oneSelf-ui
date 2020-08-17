@@ -35,8 +35,8 @@ export default {
     }
   },
   created () {
-    // 每一项，添加showChildren【展开】和 ischecked【选中】
-    // const a = (params) => {
+    // // 每一项，添加showChildren【展开】和 ischecked【选中】
+    // const loop = (params) => {
     //   if (!params.children) {
     //     params.ischecked = false
     //     return
@@ -44,11 +44,11 @@ export default {
     //   params.ischecked = false
     //   params.showChildren = false
     //   params.children.map(item => {
-    //     a(item)
+    //     loop(item)
     //   })
     // }
     // this.tempList.map(item => {
-    //   a(item)
+    //   loop(item)
     // })
     // console.log('之后水电费经理', this.tempList)
   },
