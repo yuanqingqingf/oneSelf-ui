@@ -36,21 +36,22 @@ export default {
   },
   created () {
     // // 每一项，添加showChildren【展开】和 ischecked【选中】
-    // const loop = (params) => {
-    //   if (!params.children) {
-    //     params.ischecked = false
-    //     return
-    //   }
-    //   params.ischecked = false
-    //   params.showChildren = false
-    //   params.children.map(item => {
-    //     loop(item)
-    //   })
-    // }
-    // this.tempList.map(item => {
-    //   loop(item)
-    // })
-    // console.log('之后水电费经理', this.tempList)
+    const temp = JSON.parse(JSON.stringify(this.data))
+    const a = (params) => {
+      if (!params.children) {
+        params.ischecked = false
+        return
+      }
+      params.ischecked = false
+      params.showChildren = false
+      params.children.map(item => {
+        a(item)
+      })
+    }
+    temp.map(item => {
+      a(item)
+    })
+    this.tempList = temp
   },
   methods: {
     checked (list, temp) {

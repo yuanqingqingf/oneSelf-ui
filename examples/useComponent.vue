@@ -178,71 +178,50 @@ export default {
         {
           id: '1',
           label: '一级 1',
-          showChildren: false,
-          ischecked: false,
           children: [{
             id: '1001',
             label: '二级 1-1',
-            showChildren: false,
-            ischecked: false,
             children: [{
               id: 'x1',
-              label: '三级 1-1-1',
-              ischecked: false
+              label: '三级 1-1-1'
             }]
           }]
         },
         {
           id: '2',
           label: '一级 2',
-          showChildren: false,
-          ischecked: false,
           children: [{
             id: '2001',
             label: '二级 2-1',
-            showChildren: false,
-            ischecked: false,
             children: [{
               id: 'x2',
-              label: '三级 2-1-1',
-              ischecked: false
+              label: '三级 2-1-1'
             }]
           }, {
             id: '2002',
             label: '二级 2-2',
-            showChildren: false,
-            ischecked: false,
             children: [{
               id: 'x20',
-              label: '三级 2-2-1',
-              ischecked: false
+              label: '三级 2-2-1'
             }]
           }]
         },
         {
           id: '3',
           label: '一级 3',
-          showChildren: false,
-          ischecked: false,
           children: [{
             id: '30',
             label: '二级 3-1',
-            showChildren: false,
-            ischecked: false,
             children: [{
               id: '300',
-              label: '三级 3-1-1',
-              ischecked: false
+              label: '三级 3-1-1'
             }]
           }, {
             id: '30',
             label: '二级 3-2',
-            showChildren: false,
-            ischecked: false,
             children: [{
               id: '3001',
-              label: '三级 3-2-1',
-              ischecked: false
+              label: '三级 3-2-1'
             }]
           }]
         }]
