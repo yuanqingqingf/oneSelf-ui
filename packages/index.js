@@ -2,6 +2,7 @@
 // 定义 install 方法，接受 Vue 作为参数，如果使用 use 注册插件，则所有的组件都将被注册
 // 统一导出
 // 导出颜色选择器
+import Vue from 'vue'
 import Button from './button'
 import Dialog from './dialog'
 import Input from './input'
@@ -16,8 +17,10 @@ import Tree from './tree/tree.vue'
 import select from './select/select.vue'
 import selectOption from './select/option.vue'
 import cascader from './cascader/cascader.vue'
-// import './fonts/iconfont.css'
 import './font-self/iconfont.css'
+import swiper from './swiper/swiper.vue'
+import swiperItem from './swiper/swiper-item.vue'
+import message from './message/main.js'
 
 const components = [
   Button,
@@ -33,7 +36,9 @@ const components = [
   Tree,
   select,
   selectOption,
-  cascader
+  cascader,
+  swiper,
+  swiperItem
 ]
 const install = function (Vue) {
   // 全局注册所有的组件
@@ -41,6 +46,7 @@ const install = function (Vue) {
     Vue.component(item.name, item)
   })
 }
+Vue.prototype.$message = message
 /**
  * Vue.js 官方提供的一些插件 (例如 vue-router) 在检测到 Vue 是可访问的全局变量时会自动调用 Vue.use()。然而在像 CommonJS 这样的模块环境中，你应该始终显式地调用 Vue.use()
  */

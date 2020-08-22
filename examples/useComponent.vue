@@ -97,16 +97,41 @@
     :options="cascaderOptions"
     v-model="selectedCascader"
     @change="handleChangeCascader">
+    <h3>轮播图</h3>
   </one-cascader>
+        <one-swiper v-model="selectSwiper" style="height:300px;width:300px">
+        <one-swiper-item name='s1'>
+          <div style="background:rgb(158, 132, 132);height:300px;width:300px">我是内容1</div>
+        </one-swiper-item>
+        <one-swiper-item name='s2'>
+          <div style="background:rgb(44, 206, 207);height:300px;width:300px">我是内容2</div>
+        </one-swiper-item>
+        <one-swiper-item name='s3'>
+          <div style="background:rgb(150, 164, 236);height:300px;width:300px">我是内容3</div>
+        </one-swiper-item>
+      </one-swiper>
     </div>
 </template>
 
 <script>
-
+/* messgae使用方式：
+ confirm () {
+    this.$message({
+      title: '标题',
+      message: '确定要删除吗',
+      onOk: () => {
+        console.log('这里是ok的啦')
+      },
+      onCancel: () => {
+        console.log('这里是oncancel的啦')
+      }
+    })
+ }, */
 export default {
   name: 'App',
   data () {
     return {
+      selectSwiper: '',
       selectedCascader: [], // 级联选择器 v-model
       // 级联选择器：options数据模板
       cascaderOptions: [{

@@ -13,10 +13,11 @@ useComponent.vue 文件中有各个组件的使用模板
 * input
 * radio
 * Checkbox
-* form
 * tree 树控件
 * select 选择器
 * cascader 级联选择器
+* message
+* 轮播图
 
 ## 如何运行项目
 1. 将项目下载到本地

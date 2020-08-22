@@ -1,6 +1,6 @@
 <template>
   <div id='app'>
-    <one-tree :data='treeList' @checked='getTreeChecked'></one-tree>
+    <one-button type='primary' @click="confirm">确定</one-button>
   </div>
 </template>
 
@@ -10,63 +10,21 @@ export default {
   name: 'App',
   data () {
     return {
-      // 树控件-options 数据模板
-      treeList: [
-        {
-          id: '1',
-          label: '一级 1',
-          children: [{
-            id: '1001',
-            label: '二级 1-1',
-            children: [{
-              id: 'x1',
-              label: '三级 1-1-1'
-            }]
-          }]
-        },
-        {
-          id: '2',
-          label: '一级 2',
-          children: [{
-            id: '2001',
-            label: '二级 2-1',
-            children: [{
-              id: 'x2',
-              label: '三级 2-1-1'
-            }]
-          }, {
-            id: '2002',
-            label: '二级 2-2',
-            children: [{
-              id: 'x20',
-              label: '三级 2-2-1'
-            }]
-          }]
-        },
-        {
-          id: '3',
-          label: '一级 3',
-          children: [{
-            id: '30',
-            label: '二级 3-1',
-            children: [{
-              id: '300',
-              label: '三级 3-1-1'
-            }]
-          }, {
-            id: '30',
-            label: '二级 3-2',
-            children: [{
-              id: '3001',
-              label: '三级 3-2-1'
-            }]
-          }]
-        }]
+      selectSwiper: ''
     }
   },
   methods: {
     confirm () {
-      console.log('表单', this.selectedCascader)
+      this.$message({
+        title: '标题',
+        message: '确定要删除吗',
+        onOk: () => {
+          console.log('这里是ok的啦')
+        },
+        onCancel: () => {
+          console.log('这里是oncancel的啦')
+        }
+      })
     },
     showDialogMethod () {
       this.visible = !this.visible
@@ -83,9 +41,14 @@ export default {
 
 <style lang="scss">
 #app {
-  padding: 5px 20px;
-  .one-button{
-  margin: 5px
+  // padding: 5px 20px;
+  // .one-button{
+  // margin: 5px
+  // }
+  .item{
+    height: 300px;
+    font-size: 50px;
+    background: #ccc;
   }
 }
 </style>

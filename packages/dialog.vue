@@ -97,7 +97,7 @@ export default {
         cursor: pointer;
         font-size: 16px;
         .one-icon-close{
-          color:909399
+          color:#909399
         }
       }
     }

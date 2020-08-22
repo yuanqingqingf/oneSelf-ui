@@ -1,5 +1,6 @@
 <template>
-  <button class="one-button" :class="[`one-button-${type}`,{
+  <button class="one-button"
+  :class="[`one-button-${type}`,{
     'is-plain':plain,
     'is-round':round,
     'is-circle':circle,
