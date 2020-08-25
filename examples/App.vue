@@ -1,6 +1,11 @@
 <template>
   <div id='app'>
-    <one-button type='primary' @click="confirm">确定</one-button>
+    <!-- <one-button type='primary' @click="confirm">确定</one-button> -->
+    <!-- <one-steps :active='active' isCenter>
+      <one-step title='步骤1'></one-step>
+      <one-step title='步骤2'></one-step>
+      <one-step title='步骤3'></one-step>
+    </one-steps> -->
   </div>
 </template>
 
@@ -10,6 +15,7 @@ export default {
   name: 'App',
   data () {
     return {
+      active: 1,
       selectSwiper: ''
     }
   },
@@ -45,6 +51,8 @@ export default {
   // .one-button{
   // margin: 5px
   // }
+  width:600px;
+  // border:1px solid #000;
   .item{
     height: 300px;
     font-size: 50px;

@@ -20,6 +20,8 @@ import cascader from './cascader/cascader.vue'
 import './font-self/iconfont.css'
 import swiper from './swiper/swiper.vue'
 import swiperItem from './swiper/swiper-item.vue'
+import steps from './step/steps.vue'
+import step from './step/step.vue'
 import message from './message/main.js'
 
 const components = [
@@ -38,7 +40,9 @@ const components = [
   selectOption,
   cascader,
   swiper,
-  swiperItem
+  swiperItem,
+  steps,
+  step
 ]
 const install = function (Vue) {
   // 全局注册所有的组件

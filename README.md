@@ -18,6 +18,7 @@ useComponent.vue 文件中有各个组件的使用模板
 * cascader 级联选择器
 * message
 * 轮播图
+* 步骤条
 
 ## 如何运行项目
 1. 将项目下载到本地

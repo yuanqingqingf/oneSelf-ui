@@ -97,8 +97,8 @@
     :options="cascaderOptions"
     v-model="selectedCascader"
     @change="handleChangeCascader">
-    <h3>轮播图</h3>
-  </one-cascader>
+    <h3>11、轮播图</h3>
+      </one-cascader>
         <one-swiper v-model="selectSwiper" style="height:300px;width:300px">
         <one-swiper-item name='s1'>
           <div style="background:rgb(158, 132, 132);height:300px;width:300px">我是内容1</div>
@@ -110,6 +110,13 @@
           <div style="background:rgb(150, 164, 236);height:300px;width:300px">我是内容3</div>
         </one-swiper-item>
       </one-swiper>
+    <h3>12、步骤条</h3>
+      <!-- one-steps :active='activeStep' isCenter>  添加isCenter，步骤条剧中-->
+      <one-steps :active='activeStep'>
+      <one-step title='步骤1'></one-step>
+      <one-step title='步骤2'></one-step>
+      <one-step title='步骤3'></one-step>
+    </one-steps>
     </div>
 </template>
 
@@ -131,6 +138,7 @@ export default {
   name: 'App',
   data () {
     return {
+      activeStep: '1',
       selectSwiper: '',
       selectedCascader: [], // 级联选择器 v-model
       // 级联选择器：options数据模板
